@@ -19,8 +19,10 @@ class SettingsScreen extends StatelessWidget {
           //Enter Username
           ListTile(
             title: TextFormField(
+              // Get the value from the state and set the value
               initialValue: settings.name,
               onChanged: (value) {
+                // Updating the state value and rebuilding the widget tree
                 settings.name = value;
               },
               decoration: InputDecoration(
