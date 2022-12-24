@@ -21,7 +21,7 @@ jobs:
           flutter config --enable-web
           flutter pub get
       - name: Build
-        run: cd && flutter build web --base-href=/meal_tracker/
+        run: flutter build web --base-href=/meal_tracker/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
