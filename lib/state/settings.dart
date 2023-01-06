@@ -9,7 +9,7 @@ class SettingsState extends ChangeNotifier {
     init();
   }
 
-  /// Using the [?] token whe can create an optional value
+  /// Using the [?] token we can create an optional value
   SharedPreferences? _prefs;
 
   // This is a private static method that is only inside the current class
@@ -23,14 +23,14 @@ class SettingsState extends ChangeNotifier {
     /// plugin that will store and retrieve values from the device
     _prefs = await SharedPreferences.getInstance();
 
-    /// Since the [name] is a [String] we can get it directly and provide a 
+    /// Since the [name] is a [String] we can get it directly and provide a
     /// fallback value if it is [null]
     _name = _prefs!.getString(_nameKey) ?? 'Guest';
 
     /// We are storing color as an [int] since [Color] is a non primitive type
     _sourceColor = Color(_prefs!.getInt(_sourceColorKey) ?? Colors.red.value);
-    
-    /// We are storing the [ThemeMode] has an [int] 
+
+    /// We are storing the [ThemeMode] has an [int]
     /// because it is an [enum] in dart
     _themeMode = ThemeMode
         .values[_prefs!.getInt(_themeModeKey) ?? ThemeMode.system.index];
@@ -46,7 +46,7 @@ class SettingsState extends ChangeNotifier {
   /// This is a [getter] in dart to retrieve a value by the given [name] property
   String get name => _name;
 
-  /// This is a [setter] in dart to update a value with the [name] property 
+  /// This is a [setter] in dart to update a value with the [name] property
   /// is called with a new value
   set name(String name) {
     _name = name;
